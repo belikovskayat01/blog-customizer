@@ -4,6 +4,7 @@ import { ArrowButton } from 'src/ui/arrow-button';
 import { Button } from 'src/ui/button';
 import { Select } from 'src/ui/select';
 import { RadioGroup } from 'src/ui/radio-group';
+import { Separator } from 'src/ui/separator';
 
 import {
 	defaultArticleState,
@@ -64,7 +65,8 @@ export const ArticleParamsForm = ({ onApply }: ArticleParamsFormProps) => {
 							})
 						}
 					/>
-					<Select
+					<RadioGroup
+						name='fontSize'
 						title='Размер шрифта'
 						options={fontSizeOptions}
 						selected={articleState.fontSizeOption}
@@ -75,8 +77,7 @@ export const ArticleParamsForm = ({ onApply }: ArticleParamsFormProps) => {
 							})
 						}
 					/>
-					<RadioGroup
-						name='fontColor'
+					<Select
 						title='Цвет текста'
 						options={fontColors}
 						selected={articleState.fontColor}
@@ -87,8 +88,8 @@ export const ArticleParamsForm = ({ onApply }: ArticleParamsFormProps) => {
 							})
 						}
 					/>
-					<RadioGroup
-						name='backgroundColor'
+					<Separator />
+					<Select
 						title='Цвет фона'
 						options={backgroundColors}
 						selected={articleState.backgroundColor}
@@ -99,8 +100,7 @@ export const ArticleParamsForm = ({ onApply }: ArticleParamsFormProps) => {
 							})
 						}
 					/>
-					<RadioGroup
-						name='contentWidth'
+					<Select
 						title='Ширина контента'
 						options={contentWidthArr}
 						selected={articleState.contentWidth}
